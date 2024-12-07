@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - run: Install-Module -Name Microsoft.WinGet.Client -Force
-    - run: Repair-WinGetPackageManager -AllUsers
+    - run: Repair-WinGetPackageManager -Latest -AllUsers
     - run: winget install --id WireGuard.WireGuard --accept-source-agreements
     - name: Enable TS
       run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
