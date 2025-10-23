@@ -12,8 +12,7 @@ jobs:
     - run: Repair-WinGetPackageManager -Latest -AllUsers
     - run: winget install --id WireGuard.WireGuard --accept-source-agreements
     - run: winget install --id Microsoft.OneDrive
-    - run: winget settings --enable InstallerHashOverride
-    - run: winget install -e --id SoftDeluxe.FreeDownloadManager --ignore-security-hash
+    - run: winget install --id=SoftDeluxe.FreeDownloadManager -v "6.20.0.5510" -e
     - name: Enable TS
       run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
     - run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
